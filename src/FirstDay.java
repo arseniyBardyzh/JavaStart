@@ -60,7 +60,7 @@ public class FirstDay {
         System.out.println("");
         System.out.println("Конец Пятого задания");
 
-        
+
         System.out.println("Шестое задание");
 
         int x = 5;
