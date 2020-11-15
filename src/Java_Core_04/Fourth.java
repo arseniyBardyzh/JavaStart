@@ -17,6 +17,7 @@ public class Fourth {
         System.out.println(Arrays.toString(arr));
         for(int i=0;i<tripleSum.length;i++){
             tripleSum[i] = arr[i] + arr[i+1] + arr[i+2];
+            System.out.printf("%d --- %d: %d %d %d \n", i, tripleSum[i],arr[i], arr[i+1], arr[i+2]  );
             if (tripleSum[i]>tripleMax){
                 tripleMax = tripleSum[i];
                 maxIndex = i+1;
