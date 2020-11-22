@@ -1,0 +1,21 @@
+package Java_Core_09;
+
+public class Human {
+    private String name;
+    public Human(String name){
+        this.name = name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void printInfo(){
+        System.out.printf("Этот человек с именем %s \n", this.name);
+    }
+
+}
