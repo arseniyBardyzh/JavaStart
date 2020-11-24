@@ -3,8 +3,8 @@ package Java_Core_11;
 public class Task1 {
     public static void main(String[] args) {
         Warehouse warehouse1 = new Warehouse();
-        Courier courier1 = new Courier();
-        Picker picker1 = new Picker();
+        Courier courier1 = new Courier(warehouse1);
+        Picker picker1 = new Picker(warehouse1);
 
 
         System.out.println( "Количество заказов  |"+
@@ -13,11 +13,9 @@ public class Task1 {
                             "ЗП Курьера          |\n");
 
         for(int i = 0;i<1520;i++){
-            picker1.doWork(warehouse1);
-            courier1.doWork(warehouse1);
+            picker1.doWork();
+            courier1.doWork();
 
-            picker1.bonus(warehouse1);
-            courier1.bonus(warehouse1);
 
             System.out.printf("%s", warehouse1);
             System.out.printf("%s", picker1);
@@ -27,11 +25,11 @@ public class Task1 {
         }
 
         Warehouse warehouse2 = new Warehouse();
-        Courier courier2 = new Courier();
-        Picker picker2 = new Picker();
+        Courier courier2 = new Courier(warehouse2);
+        Picker picker2 = new Picker(warehouse2);
 
-        picker2.doWork(warehouse2);
-        courier2.doWork(warehouse2);
+        picker2.doWork();
+        courier2.doWork();
 
         System.out.println( "Количество заказов  |"+
                 "Доход               |"+
