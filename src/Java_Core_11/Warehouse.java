@@ -9,6 +9,9 @@ public class Warehouse {
     private Courier courier;
     private Picker picker;
 
+    private ArrayList<Worker> workers= new ArrayList<Worker>();
+
+
     public void setCourier(Courier courier){
         this.courier =courier;
     }
@@ -16,18 +19,33 @@ public class Warehouse {
         this.picker = picker;
     }
 
+    public void setWorker(Worker worker){
+        this.workers.add(worker);
+    }
+
+    public ArrayList<Worker> getWorkers(){
+        return workers;
+    }
 
     public void setBalance(int balance) {
         this.balance = balance;
         if(this.getBalance() == 1000000){
-            courier.setSalary(courier.getSalary()*2);
+            for (int i=0;i<workers.size();i++) {
+                if (workers.get(i).getType() == "Courier") {
+                    workers.get(i).bonus();
+                }
+            }
         }
     }
 
     public void setCountOrder(int countOrder) {
         this.countOrder = countOrder;
         if(this.getCountOrder() == 1500){
-            picker.setSalary(picker.getSalary()*3);
+            for (int i=0;i<workers.size();i++) {
+                if (workers.get(i).getType() == "Courier") {
+                    workers.get(i).bonus();
+                }
+            }
         }
     }
 

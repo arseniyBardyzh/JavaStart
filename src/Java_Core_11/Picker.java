@@ -4,12 +4,28 @@ public class Picker implements Worker{
     private int salary;
     private Warehouse warehouse;
     private String name;
+    private String type;
 
-    public Picker(Warehouse warehouse){
-        this.warehouse = warehouse;
-        this.warehouse.setPicker(this);
-        this.name = name;
+    public void setType(String type) {
+        this.type = type;
     }
+
+    @Override
+    public String getType() {
+        return type;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Picker(Warehouse warehouse, String name){
+        this.name = name;
+        this.type = "Picker";
+        this.warehouse = warehouse;
+        this.warehouse.setWorker(this);
+    }
+
 
     public int getSalary() {
         return salary;
@@ -17,6 +33,7 @@ public class Picker implements Worker{
 
     public void doWork(){
         this.salary+= 80;
+
         this.warehouse.setCountOrder(this.warehouse.getCountOrder()+1);
     }
 

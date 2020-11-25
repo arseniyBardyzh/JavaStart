@@ -4,11 +4,23 @@ public class Courier implements Worker{
     private int salary;
     private Warehouse warehouse;
     private String name;
+    private String type;
 
-    public Courier(Warehouse warehouse){
-        this.warehouse = warehouse;
-        this.warehouse.setCourier(this);
+    @Override
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+
+    public Courier(Warehouse warehouse, String name){
         this.name = name;
+        this.type = "Courier";
+        this.warehouse = warehouse;
+        this.warehouse.setWorker(this);
     }
 
 

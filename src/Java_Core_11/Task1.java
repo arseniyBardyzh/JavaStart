@@ -3,11 +3,10 @@ package Java_Core_11;
 public class Task1 {
     public static void main(String[] args) {
         Warehouse warehouse1 = new Warehouse();
-        Courier courier1 = new Courier(warehouse1);
-        Picker picker1 = new Picker(warehouse1);
+        Courier courier1 = new Courier(warehouse1, "Василий");
+        Picker picker1 = new Picker(warehouse1, "Фёдор");
 
-
-        System.out.println( "Количество заказов  |"+
+       System.out.println( "Количество заказов  |"+
                             "Доход               |"+
                             "ЗП Сборщика         |"+
                             "ЗП Курьера          |\n");
@@ -25,8 +24,8 @@ public class Task1 {
         }
 
         Warehouse warehouse2 = new Warehouse();
-        Courier courier2 = new Courier(warehouse2);
-        Picker picker2 = new Picker(warehouse2);
+        Courier courier2 = new Courier(warehouse2,"Андрей");
+        Picker picker2 = new Picker(warehouse2, "Виктор");
 
         picker2.doWork();
         courier2.doWork();
