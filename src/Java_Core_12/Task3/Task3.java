@@ -1,6 +1,7 @@
 package Java_Core_12.Task3;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Task3 {
@@ -19,7 +20,7 @@ public class Task3 {
 
         Random rand = new Random();
 
-        ArrayList<MusicBand> musicArray= new ArrayList<MusicBand>();
+        List<MusicBand> musicArray= new ArrayList<MusicBand>();
         /*for (int i=0;i<10;i++){
             String firstSymbol = (char)rand.nextInt(34)+65;
             String secondSymbol = (char)rand.nextInt(34)+65;
@@ -28,8 +29,6 @@ public class Task3 {
 
             musicArray.add(name,)
         }*/
-
-
 
 
         musicArray.add(aaa);
@@ -44,9 +43,20 @@ public class Task3 {
         musicArray.add(lll);
 
 
+        System.out.println(musicArray);
 
+        System.out.println(groupsAfter2000(musicArray));
 
     }
+    public static List<MusicBand> groupsAfter2000(List<MusicBand> bands){
+        List<MusicBand> bandAfter2000 = new ArrayList<>();
+        for(MusicBand band:bands){
+            if(band.getYear()>=2000){
+                bandAfter2000.add(band);
+            }
+        }
 
+        return bandAfter2000;
+    }
 
 }

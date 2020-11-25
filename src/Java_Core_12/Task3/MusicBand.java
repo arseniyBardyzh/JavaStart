@@ -24,5 +24,8 @@ public class MusicBand {
         return year;
     }
 
+    public String toString(){
+       return "Группа: " + this.name + " Основана в " + this.year + "\n";
+    }
     
 }
