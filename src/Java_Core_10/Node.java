@@ -38,10 +38,10 @@ public class Node {
     public static void addNode(int newNodeInt, Node root){
         if ((root.rightChild == null) && (newNodeInt>=root.getRoot())){
                 Node newNode = new Node(newNodeInt);
-                root.rightChild = newNode;
+                root.setRightChild(newNode);
         }else if ((root.leftChild == null) && (newNodeInt<root.getRoot())){
                 Node newNode = new Node(newNodeInt);
-                root.leftChild = newNode;
+                root.setLeftChild(newNode);
         }else{
             if(newNodeInt<root.getRoot()){
                 addNode(newNodeInt, root.getLeftChild());
@@ -53,15 +53,27 @@ public class Node {
 
     public int searchLastNode(Node root){
         int count = 1;
-        if (root.getLeftChild()!=null){
+        return rowQtyNode(root, count);
+    }
+
+    public int rowQtyNode(Node node, int count){
+        if ((node.getLeftChild()!=null)){
             count++;
-            searchLastNode(root.getLeftChild());
-        }else if(root.getRightChild()!=null){
+            return rowQtyNode(node.getLeftChild(), count);
+        }else if(node.getRightChild()!=null){
             count++;
-            searchLastNode(root.getRightChild());
+            return rowQtyNode(node.getRightChild(), count);
         }
         return count;
     }
 
+    public static void printTree(Node root){
+        if(root!=null){
+            printTree(root.getLeftChild());
+            System.out.println(root.getRoot());
+            printTree(root.getRightChild());
+        }
+
+    }
 
 }
