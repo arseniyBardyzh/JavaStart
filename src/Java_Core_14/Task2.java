@@ -15,7 +15,6 @@ public class Task2 {
     public static List<String> parseFileToStringList(){
         File file = new File("people.txt");
         List<String> outString = new ArrayList<>();
-        List<String> outStringError = new ArrayList<>();
 
 
         try {
@@ -30,18 +29,18 @@ public class Task2 {
                         throw new IOException();
                     };
                 }
+                sc.close();
+                return outString;
 
             }catch (IOException e){
                 System.out.println("Некорректный входной файл");
-                return outStringError;
+                return null;
             }
 
-            sc.close();
+
         } catch (FileNotFoundException e) {
             System.out.println("Фвйл не найден");
-            return outStringError;
+            return null;
         }
-
-        return outString;
     }
 }
